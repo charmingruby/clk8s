@@ -5,7 +5,6 @@ import (
 )
 
 type environment struct {
-	ServerPort       string `env:"SERVER_PORT,required"`
 	DatabaseUser     string `env:"DATABASE_USER,required"`
 	DatabasePassword string `env:"DATABASE_PASSWORD,required"`
 	DatabaseHost     string `env:"DATABASE_HOST,required"`
@@ -21,7 +20,7 @@ func New() (Config, error) {
 
 	cfg := Config{
 		ServerConfig: serverConfig{
-			Port: environment.ServerPort,
+			Port: "3000", // it will be fixed
 		},
 		PostgresConfig: postgresConfig{
 			User:         environment.DatabaseUser,

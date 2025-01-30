@@ -7,8 +7,8 @@ import (
 	"net/http"
 
 	"github.com/charmingruby/bob/internal/example/core/service"
-	"github.com/charmingruby/bob/internal/example/transport/rest/dto/response"
 	"github.com/charmingruby/bob/internal/example/transport/rest/dto/request"
+	"github.com/charmingruby/bob/internal/example/transport/rest/dto/response"
 	"github.com/charmingruby/bob/internal/shared/custom_err/core_err"
 	"github.com/charmingruby/bob/internal/shared/transport/rest"
 )
