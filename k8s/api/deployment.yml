@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clk8s
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: clk8s
+  template:
+    metadata:
+      labels:
+        app: clk8s
+    spec:
+      containers:
+        - name: clk8s
+          image: charmingruby/clk8s:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: clk8s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: clk8s
+spec:
+  selector:
+    app: clk8s
+  ports:
+    - port: 80
+      targetPort: 3000
+      nodePort: 30000
+  type: NodePort

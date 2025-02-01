@@ -1,4 +1,4 @@
-DATABASE_HOST ?= postgresql
+DATABASE_HOST ?= localhost
 DATABASE_PORT ?= 5432
 DATABASE_USER ?= clk8s
 DATABASE_PASSWORD ?= password123
